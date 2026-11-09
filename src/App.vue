@@ -93,9 +93,6 @@
     <!-- FLOATING ACTION BAR -->
     <FloatingActionBar :whatsapp-url="whatsappFormattedUrl" />
 
-    <!-- CONSULTATION POPUP MODAL -->
-    <ConsultationModal ref="consultationModalRef" />
-
     <Footer />
   </div>
 </template>
@@ -115,17 +112,11 @@ import SuccessState from '@/components/SuccessState.vue';
 import FaqSection from '@/components/FaqSection.vue';
 import ActionSection from '@/components/ActionSection.vue';
 import FloatingActionBar from '@/components/FloatingActionBar.vue';
-import ConsultationModal from '@/components/ConsultationModal.vue';
 import Footer from '@/components/Footer.vue';
 import { useFasilitasUmrahForm } from '@/composables/useFasilitasUmrahForm';
 import '@/assets/css/fasilitasUmrah.css';
 
 const contactPanelRef = ref(null);
-const consultationModalRef = ref(null);
-
-const openConsultationModal = () => {
-  consultationModalRef.value?.open();
-};
 
 const {
   recaptchaSiteKey,
