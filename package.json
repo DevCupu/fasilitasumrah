@@ -1,0 +1,23 @@
+{
+  "name": "fasilitasumrah",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "node scripts/patch-rollup.cjs"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "lucide-vue-next": "^0.475.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.68.0",
+    "@rollup/wasm-node": "^4.68.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.2.0"
+  }
+}

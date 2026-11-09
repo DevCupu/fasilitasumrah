@@ -1,0 +1,106 @@
+name: Deploy Fasilitas Umrah
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: production-fasilitasumrah
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout source code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # 3. Install frontend dependencies
+      - name: Install Node dependencies
+        run: npm ci
+
+      # 4. Injeksi Environment Variables untuk Production
+      - name: Create Production .env
+        run: |
+          cat << 'EOF' > .env
+          VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL || 'https://izitravel.id' }}
+          VITE_RECAPTCHA_SITE_KEY=${{ secrets.VITE_RECAPTCHA_SITE_KEY || '' }}
+          VITE_WHATSAPP_NUMBER=${{ secrets.VITE_WHATSAPP_NUMBER || '6281234567890' }}
+          EOF
+
+      # 5. Build Vite (menghasilkan folder dist/)
+      - name: Build frontend
+        run: npm run build
+
+      # 6. Update source di server (/home/izim8295/fasilitasumrah di luar public_html)
+      - name: Update source on server
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER || 'izim8295' }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+
+            # Masuk ke folder proyek di luar public_html
+            cd /home/izim8295/fasilitasumrah
+
+            # Update git repository
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Pastikan folder dist di server siap
+            mkdir -p /home/izim8295/fasilitasumrah/dist
+
+      # 7. Upload hasil build Vite ke /home/izim8295/fasilitasumrah/dist
+      - name: Upload Vite build
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER || 'izim8295' }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "dist/*"
+          target: "/home/izim8295/fasilitasumrah/dist"
+          strip_components: 1
+          overwrite: true
+
+      # 8. Sambungkan web root dan rapikan hak akses file/folder
+      - name: Sync web root and fix permissions
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER || 'izim8295' }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+
+            # Jika public_html/fasilitasumrah.com adalah symlink, arahkan ke dist
+            # Jika berupa folder fisik, sync isi dist ke dalamnya
+            if [ -L /home/izim8295/public_html/fasilitasumrah.com ]; then
+              ln -sfn /home/izim8295/fasilitasumrah/dist /home/izim8295/public_html/fasilitasumrah.com
+            elif [ -d /home/izim8295/public_html/fasilitasumrah.com ]; then
+              cp -rf /home/izim8295/fasilitasumrah/dist/* /home/izim8295/public_html/fasilitasumrah.com/
+            else
+              ln -sfn /home/izim8295/fasilitasumrah/dist /home/izim8295/public_html/fasilitasumrah.com
+            fi
+
+            # Set permission standar cPanel (755 directory, 644 file)
+            find /home/izim8295/fasilitasumrah/dist -type d -exec chmod 755 {} + 2>/dev/null || true
+            find /home/izim8295/fasilitasumrah/dist -type f -exec chmod 644 {} + 2>/dev/null || true
+            if [ -d /home/izim8295/public_html/fasilitasumrah.com ] && [ ! -L /home/izim8295/public_html/fasilitasumrah.com ]; then
+              find /home/izim8295/public_html/fasilitasumrah.com -type d -exec chmod 755 {} + 2>/dev/null || true
+              find /home/izim8295/public_html/fasilitasumrah.com -type f -exec chmod 644 {} + 2>/dev/null || true
+            fi
