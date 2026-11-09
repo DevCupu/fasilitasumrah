@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 concurrency:
   group: production-fasilitasumrah
@@ -53,10 +54,12 @@ jobs:
           script: |
             set -e
 
-            # Masuk ke folder proyek di luar public_html
-            cd /home/izim8295/fasilitasumrah
+            # Jika folder belum ada di server, otomatis clone
+            if [ ! -d /home/izim8295/fasilitasumrah ]; then
+              git clone https://github.com/DevCupu/fasilitasumrah.git /home/izim8295/fasilitasumrah
+            fi
 
-            # Update git repository
+            cd /home/izim8295/fasilitasumrah
             git fetch origin main
             git reset --hard origin/main
 
