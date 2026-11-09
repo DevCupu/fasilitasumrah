@@ -15,7 +15,6 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@rollup/rollup-win32-x64-msvc": "^4.68.0",
     "@rollup/wasm-node": "^4.68.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "vite": "^6.2.0"
