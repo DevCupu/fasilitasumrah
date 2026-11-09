@@ -56,46 +56,119 @@ html { scroll-behavior: smooth; }
   letter-spacing: inherit;
 }
 
-/* --- 1. NAVBAR --- */
-.fu-navbar {
+/* --- 1. APP-LIKE BRAND HEADER --- */
+.fu-header-app, .fu-navbar {
   display: flex;
-  min-height: 54px;
+  min-height: 56px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  background: var(--fu-blue);
-  border-bottom: 2px solid var(--fu-red);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 8px 16px;
+  background: linear-gradient(180deg, #1A365D 0%, #152A4A 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.18);
+  position: relative;
+  z-index: 40;
 }
-.fu-nav-cta {
+
+.fu-header-brand, .fu-brand {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: var(--fu-red);
-  color: #fff !important;
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  box-shadow: 0 2px 6px rgba(229, 62, 62, 0.35);
-  transition: background .15s ease, transform .15s ease;
+  gap: 10px;
+  text-decoration: none;
 }
-.fu-nav-cta:hover {
-  background: var(--fu-red-dark);
-  transform: translateY(-1px);
+
+.fu-brand-icon-box {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.35);
+  flex: none;
 }
-.fu-page .fu-brand {
-  color: #fff;
-  font-size: 16px;
+
+.fu-brand-svg {
+  width: 17px;
+  height: 17px;
+  color: #FFFFFF;
+}
+
+.fu-brand-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+}
+
+.fu-brand-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  line-height: 1.15;
+}
+
+.fu-brand-title {
+  color: #FFFFFF;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.025em;
 }
-.fu-page .fu-brand span {
-  color: #fff;
-  opacity: .82;
-  font-weight: 500;
+
+.fu-brand-tld {
+  color: #63B3ED;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
-.fu-page .fu-brand:active { opacity: .7; }
+
+.fu-brand-badge-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #CBD5E1;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.fu-brand-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4ADE80;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.8);
+}
+
+.fu-header-cta, .fu-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E53E3E 0%, #D61B1F 100%);
+  color: #FFFFFF !important;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.4);
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+  flex: none;
+}
+
+.fu-header-cta:hover, .fu-nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.5);
+}
+
+.fu-header-cta:active, .fu-nav-cta:active {
+  transform: scale(0.97);
+}
+
+.fu-header-cta-icon {
+  color: #FFFFFF;
+}
 
 /* --- 2. HERO BANNER --- */
 .fu-hero {
