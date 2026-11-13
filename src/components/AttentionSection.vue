@@ -1,95 +1,104 @@
 <template>
   <section id="attention" class="fu-attention-section">
     <div class="fu-attention-content">
-      <div class="fu-att-badge">
-        <span class="fu-att-badge-dot"></span>
-        <ShieldCheck :size="13" class="fu-att-badge-icon" />
-        <span>PARTNER UMRAH MANDIRI ANDA</span>
-      </div>
+      <div class="fu-att-header">
+        <div class="fu-att-badge">
+          <ShieldCheck :size="13" class="fu-att-badge-icon" />
+          <span>PARTNER UMRAH MANDIRI ANDA</span>
+        </div>
 
-      <h1 class="fu-attention-title">
-        Mau Umrah Mandiri, Tapi Takut Ribet & Khawatir Bermasalah?
-      </h1>
+        <h1 class="fu-attention-title">
+          Mau Umrah Mandiri, Tapi Khawatir Ribet & Bermasalah?
+        </h1>
 
-      <!-- KEKHAWATIRAN UMRAH MANDIRI (LENGKAP 6 KOMPONEN LAYANAN) -->
-      <div class="fu-att-fears-box">
-        <p class="fu-att-fears-intro">
-          <AlertCircle :size="14" class="fu-intro-alert-icon" />
-          <span>Kekhawatiran yang sering dialami calon jamaah mandiri:</span>
+        <p class="fu-att-lead">
+          Merencanakan ibadah sendiri memberi kebebasan jadwal dan anggaran. Namun, pastikan Anda terhindar dari 6 risiko teknis yang kerap dialami jamaah:
         </p>
+      </div>
 
-        <div class="fu-att-fears-grid">
-          <div class="fu-fear-card">
-            <span class="fu-fear-tag">Visa</span>
-            <p>Takut ditolak atau salah regulasi imigrasi</p>
+      <!-- 6 KEKHAWATIRAN TEKNIS (CLEAN MINIMAL GRID) -->
+      <div class="fu-att-fears-grid">
+        <div class="fu-fear-card">
+          <div class="fu-fear-card-top">
+            <span class="fu-fear-tag">01 • VISA</span>
           </div>
-
-          <div class="fu-fear-card">
-            <span class="fu-fear-tag">Tiket Pesawat</span>
-            <p>Takut salah rute, transit lama, atau tiket hangus</p>
-          </div>
-
-          <div class="fu-fear-card">
-            <span class="fu-fear-tag">Hotel</span>
-            <p>Takut "zonk" atau kejauhan dari masjid</p>
-          </div>
-
-          <div class="fu-fear-card">
-            <span class="fu-fear-tag">Transport</span>
-            <p>Bingung cari armada resmi di Saudi</p>
-          </div>
-
-          <div class="fu-fear-card">
-            <span class="fu-fear-tag">Handling</span>
-            <p>Was-was tanpa pendamping saat darurat</p>
-          </div>
-
-          <div class="fu-fear-card">
-            <span class="fu-fear-tag">Paket / Biaya</span>
-            <p>Khawatir biaya bengkak & koordinasi ribet</p>
-          </div>
+          <p>Takut visa ditolak atau menyalahi regulasi imigrasi Saudi</p>
         </div>
 
-        <div class="fu-att-fears-solution">
-          <CheckCircle2 :size="15" class="fu-solution-icon" />
-          <p>
-            <strong>Tenang, Anda tak perlu menanggung risikonya sendirian.</strong> Bebas tentukan jadwal & budget, seluruh urusan teknis layanan di atas kami amankan!
-          </p>
+        <div class="fu-fear-card">
+          <div class="fu-fear-card-top">
+            <span class="fu-fear-tag">02 • TIKET</span>
+          </div>
+          <p>Takut salah pilih rute penerbangan, transit lama, atau tiket hangus</p>
+        </div>
+
+        <div class="fu-fear-card">
+          <div class="fu-fear-card-top">
+            <span class="fu-fear-tag">03 • HOTEL</span>
+          </div>
+          <p>Takut dapat hotel "zonk", fasilitas buruk, atau kejauhan dari masjid</p>
+        </div>
+
+        <div class="fu-fear-card">
+          <div class="fu-fear-card-top">
+            <span class="fu-fear-tag">04 • TRANSPORT</span>
+          </div>
+          <p>Bingung mencari armada bus atau mobil resmi yang aman di Arab Saudi</p>
+        </div>
+
+        <div class="fu-fear-card">
+          <div class="fu-fear-card-top">
+            <span class="fu-fear-tag">05 • HANDLING</span>
+          </div>
+          <p>Was-was tanpa pendamping atau perwakilan saat terjadi kendala darurat</p>
+        </div>
+
+        <div class="fu-fear-card">
+          <div class="fu-fear-card-top">
+            <span class="fu-fear-tag">06 • ANGGARAN</span>
+          </div>
+          <p>Khawatir biaya bengkak tak terduga karena salah perhitungan</p>
         </div>
       </div>
 
-      <!-- SOLUSI SATU PINTU (CLEAN CARD) -->
+      <!-- SOLUSI SATU PINTU (CLEAN UNIFIED SOLUTION BLOCK) -->
       <div class="fu-att-solution-card">
-        <p class="fu-att-solution-title">
-          Visa, Hotel, Tiket Pesawat, Transportasi hingga Handling Umrah
-        </p>
-        <p class="fu-att-solution-desc">
-          Pesan satuan atau paket lengkap, semua kami bantu siapkan.
-        </p>
+        <div class="fu-att-solution-header">
+          <div class="fu-att-solution-icon-box">
+            <CheckCircle2 :size="18" />
+          </div>
+          <div class="fu-att-solution-text">
+            <h3 class="fu-att-solution-title">Tenang, Anda Tak Perlu Menanggung Risikonya Sendirian</h3>
+            <p class="fu-att-solution-desc">
+              Pesan satuan atau paket lengkap — <strong>Visa, Hotel, Tiket Pesawat, Transportasi hingga Handling Umrah</strong>, semua kami siapkan secara resmi, aman, dan transparan.
+            </p>
+          </div>
+        </div>
+
+        <div class="fu-att-solution-action">
+          <a href="#konsultasi" class="fu-cta-primary fu-att-cta-btn" aria-label="Konsultasi Kebutuhan Umrah Sekarang">
+            <span>KONSULTASI KEBUTUHAN SEKARANG</span>
+            <ArrowRight :size="15" />
+          </a>
+        </div>
       </div>
 
-      <div class="fu-attention-actions">
-        <a href="#konsultasi" class="fu-cta-primary fu-att-cta-btn" aria-label="Konsultasi Kebutuhan Umrah Sekarang">
-          <span>KONSULTASI KEBUTUHAN UMRAH SEKARANG</span>
-          <ArrowRight :size="16" />
-        </a>
-      </div>
-
-      <p class="fu-att-note">
-        Layanan untuk jamaah mandiri, keluarga, komunitas, dan travel agent se-Indonesia.
-      </p>
-
+      <!-- TRUST REASSURANCE -->
       <div class="fu-att-trust-row">
         <div class="fu-att-trust-item">
-          <CheckCircle2 :size="13" />
+          <Check :size="13" />
           <span>Konsultasi Gratis</span>
         </div>
         <div class="fu-att-trust-item">
-          <CheckCircle2 :size="13" />
-          <span>Harga Transparan</span>
+          <Check :size="13" />
+          <span>Bisa Pesan Satuan</span>
         </div>
         <div class="fu-att-trust-item">
-          <CheckCircle2 :size="13" />
+          <Check :size="13" />
+          <span>Biaya Transparan</span>
+        </div>
+        <div class="fu-att-trust-item">
+          <Check :size="13" />
           <span>Melayani Se-Indonesia</span>
         </div>
       </div>
@@ -100,8 +109,8 @@
 <script setup>
 import {
   ShieldCheck,
-  AlertCircle,
-  ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  Check,
+  ArrowRight
 } from 'lucide-vue-next';
 </script>
