@@ -5,11 +5,17 @@
     <main>
       <HeroBanner />
 
+      <!-- TRUST RIBBON TICKER -->
+      <TrustRibbon />
+
       <!-- SECTION 1 — ATTENTION -->
       <AttentionSection />
 
       <!-- SECTION 2 — INTEREST -->
       <InterestSection />
+
+      <!-- SECTION 3 — DESIRE -->
+      <DesireSection />
 
       <!-- SECTION 4 — DUA JALUR LAYANAN -->
       <AudienceSection />
@@ -101,8 +107,10 @@
 import { ref, watch } from 'vue';
 import Navbar from '@/components/Navbar.vue';
 import HeroBanner from '@/components/HeroBanner.vue';
+import TrustRibbon from '@/components/TrustRibbon.vue';
 import AttentionSection from '@/components/AttentionSection.vue';
 import InterestSection from '@/components/InterestSection.vue';
+import DesireSection from '@/components/DesireSection.vue';
 import AudienceSection from '@/components/AudienceSection.vue';
 import PromoBanner from '@/components/PromoBanner.vue';
 import WorkflowSection from '@/components/WorkflowSection.vue';

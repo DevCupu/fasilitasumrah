@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#EAB308" />
+      <stop offset="100%" stop-color="#CA8A04" />
+    </linearGradient>
+    <!-- Deep Navy Gradient -->
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <!-- Crimson Gradient -->
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Ribbon Back Tails -->
+  <path d="M40 145 L15 175 L45 165 L55 185 L65 145 Z" fill="#991B1B" />
+  <path d="M160 145 L185 175 L155 165 L145 185 L135 145 Z" fill="#991B1B" />
+
+  <!-- Outer Starburst / Scallop Edge -->
+  <circle cx="100" cy="95" r="76" fill="url(#goldGrad)" filter="url(#badgeShadow)" />
+  <circle cx="100" cy="95" r="70" fill="#FFFFFF" />
+  <circle cx="100" cy="95" r="65" fill="url(#navyGrad)" />
+
+  <!-- Inner Dotted Ring -->
+  <circle cx="100" cy="95" r="59" fill="none" stroke="#FDE047" stroke-width="1.5" stroke-dasharray="3,3" />
+
+  <!-- Center Icons: Shield & Kaaba Silhouette -->
+  <path d="M100 52 C115 52 125 57 125 72 C125 90 100 102 100 105 C100 102 75 90 75 72 C75 57 85 52 100 52 Z" fill="url(#goldGrad)" opacity="0.15" />
+  <path d="M100 56 C112 56 120 60 120 72 C120 86 100 97 100 99 C100 97 80 86 80 72 C80 60 88 56 100 56 Z" fill="none" stroke="#FDE047" stroke-width="2" />
+  
+  <!-- Checkmark in Center -->
+  <path d="M92 76 L98 82 L109 68" fill="none" stroke="#FDE047" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Curved Text Path Alternative: Clean Horizontal Typography -->
+  <text x="100" y="118" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="10" font-weight="800" fill="#FDE047" letter-spacing="1.5">100% RESMI</text>
+  <text x="100" y="130" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="7.5" font-weight="600" fill="#93C5FD" letter-spacing="0.8">TERVERIFIKASI</text>
+
+  <!-- Front Ribbon Banner -->
+  <g filter="url(#badgeShadow)">
+    <path d="M30 140 L170 140 L160 162 L40 162 Z" fill="url(#crimsonGrad)" />
+    <!-- Ribbon Fold Dark Accents -->
+    <polygon points="30,140 40,140 40,162" fill="#7F1D1D" />
+    <polygon points="170,140 160,140 160,162" fill="#7F1D1D" />
+    <text x="100" y="154" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="9" font-weight="800" fill="#FFFFFF" letter-spacing="1">GARANSI LAYANAN</text>
+  </g>
+</svg>

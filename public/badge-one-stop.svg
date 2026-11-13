@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+    <filter id="badgeShadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Ribbon Back Tails -->
+  <path d="M40 145 L15 175 L45 165 L55 185 L65 145 Z" fill="#1E3A8A" />
+  <path d="M160 145 L185 175 L155 165 L145 185 L135 145 Z" fill="#1E3A8A" />
+
+  <!-- Outer Starburst / Scallop Edge -->
+  <circle cx="100" cy="95" r="76" fill="url(#emeraldGrad)" filter="url(#badgeShadow2)" />
+  <circle cx="100" cy="95" r="70" fill="#FFFFFF" />
+  <circle cx="100" cy="95" r="65" fill="#F8FAFC" />
+
+  <!-- Inner Dotted Ring -->
+  <circle cx="100" cy="95" r="59" fill="none" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3,3" />
+
+  <!-- Center Icons: Door / Keyhole & Check -->
+  <circle cx="100" cy="80" r="22" fill="#ECFDF5" />
+  <path d="M92 80 L98 86 L108 74" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Typography -->
+  <text x="100" y="117" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="9.5" font-weight="800" fill="#0F172A" letter-spacing="1">SATU PINTU</text>
+  <text x="100" y="128" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="7.5" font-weight="600" fill="#059669" letter-spacing="0.8">UMRAH MANDIRI</text>
+
+  <!-- Front Ribbon Banner -->
+  <g filter="url(#badgeShadow2)">
+    <path d="M30 140 L170 140 L160 162 L40 162 Z" fill="url(#blueGrad)" />
+    <!-- Ribbon Fold Dark Accents -->
+    <polygon points="30,140 40,140 40,162" fill="#172554" />
+    <polygon points="170,140 160,140 160,162" fill="#172554" />
+    <text x="100" y="154" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="1">100% TRANSPARAN</text>
+  </g>
+</svg>
+

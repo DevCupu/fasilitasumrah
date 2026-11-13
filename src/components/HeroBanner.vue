@@ -3,9 +3,9 @@
     <img
       class="fu-hero-banner"
       :src="bannerSrc"
-      alt="Banner Umrah Mandiri Tanpa Repot — fasilitasumrah.com"
+      alt="Banner Atur Perjalanan Umrah Kamu Sendiri — fasilitasumrah.com"
       width="1024"
-      height="384"
+      height="687"
       fetchpriority="high"
       decoding="async"
     />
